@@ -1,0 +1,16 @@
+<%# app/views/widgets/show.html.erb %>
+<h1><%= @widget.name %></h1>
+<br/>
+<h2><%= @widget.manufacturer_id%></h2>
+<br/>
+<h2>ID #<%= @widget.id %></h2>
+
+
+<% if flash[:notice].present? %>
+  <aside>
+    <%= flash[:notice] %>
+  </aside>
+<% end %>
+
+<%= render partial: 'rating' %>
+

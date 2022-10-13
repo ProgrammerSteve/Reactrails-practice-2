@@ -1,0 +1,23 @@
+<%# app/views/widgets/_rating.html.erb%>
+<section>
+  <div class="clear-floats">
+    <h3 class="m-0 pr-4 float-left">
+      Rate this widget:
+    </h3>
+
+    <ol class="p-0 m-0">
+      <% (1..5).each do |rating|%>
+        <li class="float-left">
+          <%= button_to rating,
+            widget_ratings_path,
+            params: {
+              widget_id: @widget.id,
+              rating: rating
+            }
+          %>
+        </li>
+      <%end%>
+    </ol>
+  </div>
+  <p>Your ratings help us be amazing!</p>
+</section>
